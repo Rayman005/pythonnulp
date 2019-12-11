@@ -8,11 +8,11 @@ def Wrapper (func):
 
 
 @Wrapper
-def Lab2 (text):
+def Restructure (text):
     print(text)
 
 def main():
-    Lab2("<div><h2><b>Hello world!</b></h1></div><br>")
+    Restructure("<div><h2><b>Hello world!</b></h1></div><br>")
 
 if __name__ == "__main__":
     main()
