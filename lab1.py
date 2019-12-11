@@ -3,9 +3,7 @@ import random
 class Lab1:
     
     def func (v):
-        sum = 0
-        for i in v:
-            sum += i
+        sum += i for i in v
         return {'sum': sum, 'avg': sum/len(v)}
 
 def main():
