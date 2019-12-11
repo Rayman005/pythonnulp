@@ -3,7 +3,7 @@ import html
 def Wrapper (func):
     def wrapper (text):
         a = html.escape(text)
-        func(a)
+        return func(a)
     return wrapper
 
 
