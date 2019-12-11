@@ -1,18 +1,18 @@
-def Wraps (fun):
-  def Wrapper (fn):
-    fn.__name__ = fun.__name__
-    fn.__doc__ = fun.__doc__
-    return fn
+def Wraps (outside_function):
+  def Wrapper (inside_function):
+    inside_function.__name__ = outside_function.__name__
+    inside_function.__doc__ = outside_function.__doc__
+    return inside_function
   return Wrapper
 
-def Wrapper (fun):
-  @Wraps(fun)
-  def wrapper (a):
-    fun(a)
+def Wrapper (outside_function):
+  @Wraps(outside_function)
+  def wrapper (*args, **kwargs):
+    outside_function(*args, **kwargs)
   return wrapper
 
 @Wrapper
-def Some_method (a):
+def Some_method (*args, **kwargs):
   """Documentation for method Lab4 in lab4"""
   pass
 
