@@ -9,11 +9,11 @@ def Html (tag):
 @Html("div")
 @Html("h2")
 @Html("b")
-def Lab3 (a):
+def Textprocessing (a):
     return a
 
 def main():
-    print(Lab3("Hello world!"))
+    print(Textprocessing("Hello world!"))
 
 if __name__ == "__main__":
     main()
