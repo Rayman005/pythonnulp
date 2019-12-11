@@ -1,29 +1,43 @@
-class Database:
-    def connect (self):
-        pass
+class Shape:
+  def area(self):
+    pass
 
-class DatabaseMYSQL(Database):
-    def connect(self):
-        return "MySQL"
+class Triangle(Shape):
+  def __init__ (self, a, b, c):
+    self.a = a
+    self.b = b
+    self.c = c
+  def area (self):
+    s = (self.a+self.b+self.c)/2
+    return (s*(s-self.a)*(s-self.b)*(s-self.c))**0.5
 
-class DatabaseMONGO(Database):
-    def connect(self):
-        return "MongoDB"
+class Square(Shape):
+  def __init__ (self, a):
+    self.a = a
+  def area (self):
+    return self.a**2
 
-class Books:
-    def __init__ (self, database: Database):
-        self.database = database
+class Circle(Shape):
+  def __init__ (self, r):
+    self.r = r
+  def area (self):
+    return 3.14*self.r**2
 
-    def get_books (self):
-        conn = self.database.connect()
-        print("List of books from " + conn)
+class View:
+  def __init__ (self, shape:Shape):
+    self.shape = shape
+  def get_area (self):
+    return self.shape.area()
 
 if __name__ == "__main__":
-    mysql = DatabaseMYSQL()
-    mongo = DatabaseMONGO()
+  triangle = Triangle(2,3,4)
+  square = Square(2)
+  circle = Circle(3)
 
-    books_mysql = Books(mysql)
-    books_mongo = Books(mongo)
+  view_t = View(triangle)
+  view_s = View(square)
+  view_t = View(circle)
 
-    books_1 = books_mysql.get_books()
-    books_2 = books_mongo.get_books()
+  print("Triangle: " + str(view_t.get_area()))
+  print("Square: " + str(view_s.get_area()))
+  print("Circle: " + str(view_c.get_area()))
