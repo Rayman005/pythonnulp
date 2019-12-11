@@ -12,13 +12,13 @@ def Wrapper (fun):
   return wrapper
 
 @Wrapper
-def Lab4 (a):
+def Some_method (a):
   """Documentation for method Lab4 in lab4"""
   pass
 
 def main():
-    print(Lab4.__name__)
-    print(Lab4.__doc__)
+    print(Some_method.__name__)
+    print(Some_method.__doc__)
 
 if __name__ == "__main__":
     main()
