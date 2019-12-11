@@ -2,8 +2,8 @@ import html
 
 def Wrapper (func):
     def wrapper (text):
-        a = html.escape(text)
-        return func(a)
+        net_text = html.escape(text)
+        return func(net_text)
     return wrapper
 
 
