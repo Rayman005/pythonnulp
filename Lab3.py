@@ -1,7 +1,7 @@
 def Html (tag):
-    def Wrapper (fun):
-        def wrapper (a):
-            return "<" + tag + ">" + fun(a) + "</" + tag + ">"
+    def Wrapper (function):
+        def wrapper (text):
+            return "<" + tag + ">" + inside_function(text) + "</" + tag + ">"
         return wrapper
     return Wrapper
 
@@ -9,8 +9,8 @@ def Html (tag):
 @Html("div")
 @Html("h2")
 @Html("b")
-def Textprocessing (a):
-    return a
+def Textprocessing (text):
+    return text
 
 def main():
     print(Textprocessing("Hello world!"))
