@@ -1,7 +1,7 @@
 def Html (tag):
     def Wrapper (function):
         def wrapper (text):
-            return "<" + tag + ">" + inside_function(text) + "</" + tag + ">"
+            return "<" + tag + ">" + function(text) + "</" + tag + ">"
         return wrapper
     return Wrapper
 
