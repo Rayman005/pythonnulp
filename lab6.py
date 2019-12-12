@@ -3,25 +3,25 @@ class Shape:
     pass
 
 class Triangle(Shape):
-  def __init__ (self, a, b, c):
-    self.a = a
-    self.b = b
-    self.c = c
+  def __init__ (self, side_a, side_b, side_c):
+    self.side_a = side_a
+    self.side_b = side_b
+    self.side_c = side_c
   def area (self):
-    s = (self.a+self.b+self.c)/2
-    return (s*(s-self.a)*(s-self.b)*(s-self.c))**0.5
+    squre = (self.side_a+self.side_b+self.side_c)/2
+    return (squre*(squre-self.side_a)*(squre-self.side_b)*(squre-self.side_c))**0.5
 
 class Square(Shape):
-  def __init__ (self, a):
-    self.a = a
+  def __init__ (self, side):
+    self.side = side
   def area (self):
-    return self.a**2
+    return self.side**2
 
 class Circle(Shape):
-  def __init__ (self, r):
-    self.r = r
+  def __init__ (self, radious):
+    self.radious = radious
   def area (self):
-    return 3.14*self.r**2
+    return 3.14*self.radious**2
 
 class View:
   def __init__ (self, shape:Shape):
